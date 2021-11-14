@@ -62,13 +62,36 @@ print(set_a.intersection(set_b))  # prunik
 print(set_a.symmetric_difference(set_b))  # rozdil
 print(set_a.difference(set_b))  # a - b
 
-# pridavani a odebirani hodnot - metoda .add
+# pridavani a odebirani hodnot - metoda .add (pridani 1 udaje), .update (pridani vice udaju)
 set_a.add("Zuzana")
 print(set_a)
-set_a.add(["mesto","more"])
+set_a.update(["mesto","more"])
 print(set_a)
-set_a.add(tupl1)
+set_a.update(tupl1)
 print(set_a)
+
+# odstraneni udaje - metoda .discard (odstrani zadny udaj), .pop (odstrani nahodne jeden udaj)
+set_a.discard("mesto")
+print(set_a)
+set_a.pop()
+print(set_a)
+
+##### frozenset
+# po vytvoreni nelze zmenit (jako list vs tuple)
+
+# vytvoreni prazdneho nedava smysl - nelze do nej pridavat
+# vytvari se prikazem frozenset()
+# v zavorce je list, tuple ci set. Pokud jen string, rozseka ho to na pismena
+# smi byt zadan jen jeden argument
+frset1 = frozenset("abc")
+# string rozseka na pismena
+print(frset1)
+frset2 = frozenset(("ahoj", "nashle"))
+print(frset2)
+frset3 = frozenset(list1)
+print(frset3)
+frset4 = frozenset(list1, ["ahoj", "nashle"]) #hodi error ze vyzaduje jen 1 argument a josu 2
+
 
 
 
